@@ -488,7 +488,7 @@ Highcharts.chart('container', {
         type: 'line'
     },
     title: {
-        text: 'Hero Up 2017-2018'
+        text: 'Hero Up 2018-2019'
     },
     subtitle: {
         text: 'Daily Funds'
