@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wobble-ittisa</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- load Highcharts, Highcharts-more, and modules -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js">></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+
+<body>
+<div class="logo">
+    <img style="max-width: 150px" src="assets/HeroUpLogo.png">
+</div>
+
+<div id="container" style="min-width: 310px; height: 400px; margin-bottom: 10px"></div>
+<div id="container2" style="min-width: 310px; height: 400px; margin-bottom: 10px"></div>
+<div id="container3" style="min-width: 310px; height: 400px; margin: 10px"></div>
+<script src="js/scripts.js">
+  
+ // $(function(){
+
+
+
+// // Create the chart
+// Highcharts.chart('container', {
+//     chart: {
+//         type: 'column'
+//     },
+//     title: {
+//         text: 'Hero Up 2017-18'
+//     },
+//     subtitle: {
+//         text: 'Click the columns to view funds raised weekly '
+//     },
+//     xAxis: {
+//         type: 'category'
+//     },
+//     yAxis: {
+//         title: {
+//             text: 'Total funds Raised'
+//         }
+
+//     },
+//     legend: {
+//         enabled: false
+//     },
+//     plotOptions: {
+//         series: {
+//             borderWidth: 0,
+//             dataLabels: {
+//                 enabled: true,
+//                 formatter:function() {
+//                     if(this.y > 99999){
+//                         var roundoff = (this.y / 100000) ;
+//                         return Highcharts.numberFormat(roundoff) + 'L';
+//                     }
+//                     else {
+//                         var roundoff = (this.y / 1000) ;
+//                         return Highcharts.numberFormat(roundoff) + 'K';
+//                     }
+//                     }
+//             }
+//         }
+//     },
+
+//     tooltip: {
+//         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+//         pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>Rs{point.y:.2f}</b><br/>'
+//     },
+
+//     "series": [
+//         {
+//             "name": "Cities",
+//             "colorByPoint": true,
+//             "data": [
+//                 {
+//                     "name": "Bangalore",
+//                     "y": 1123000,
+//                     "drilldown": "Bangalore"
+//                 },
+//                 {
+//                     "name": "Chennai",
+//                     "y": 1078556,
+//                     "drilldown": "Chennai"
+//                 },
+//                 {
+//                     "name": "Coimbatore",
+//                     "y": 756778,
+//                     "drilldown": "Coimbatore"
+//                 },
+//                 {
+//                     "name": "Pune",
+//                     "y": 545445,
+//                     "drilldown": "Pune"
+//                 },
+//                 {
+//                     "name": "Delhi",
+//                     "y": 454333,
+//                     "drilldown": "Delhi"
+//                 },
+//                 {
+//                     "name": "Mangalore",
+//                     "y": 199877,
+//                     "drilldown": "Mangalore"
+//                 },
+//                 {
+//                     "name": "Mumbai",
+//                     "y": 734223,
+//                     "drilldown": "Mumbai"
+//                 },
+//                 {
+//                     "name": "Cochin",
+//                     "y": 743444,
+//                     "drilldown": "Cochin"
+//                 },
+//                 {
+//                     "name": "Mysore",
+//                     "y": 455454,
+//                     "drilldown": "Mysore"
+//                 },
+//                 {
+//                     "name": "Hyderabad",
+//                     "y": 656666,
+//                     "drilldown": "Hyderabad"
+//                 },
+//                 {
+//                     "name": "Vellore",
+//                     "y": 212333,
+//                     "drilldown": "Vellore"
+//                 }
+//             ]
+//         }
+//     ],
+//     "drilldown": {
+//         "series": [
+//             {
+//                 "name": "Bangalore",
+//                 "id": "Bangalore",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Chennai",
+//                 "id": "Chennai",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Coimbatore",
+//                 "id": "Coimbatore",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Pune",
+//                 "id": "Pune",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Delhi",
+//                 "id": "Delhi",
+//                "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Mangalore",
+//                 "id": "Mangalore",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Mumbai",
+//                 "id": "Mumbai",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Cochin",
+//                 "id": "Cochin",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Mysore",
+//                 "id": "Mysore",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Hyderabad",
+//                 "id": "Hyderabad",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             },
+//             {
+//                 "name": "Vellore",
+//                 "id": "Vellore",
+//                 "data": [
+//                     [
+//                         "Week 1",
+//                         20089
+//                     ],
+//                     [
+//                         "Week 2",
+//                         10066
+//                     ],[
+//                         "Week 3",
+//                         8045
+//                     ],[
+//                         "Week 4",
+//                         16045
+//                     ],[
+//                         "Week 5",
+//                         30345
+//                     ],[
+//                         "Week 6",
+//                         33045
+//                     ],[
+//                         "Week 7",
+//                         25066
+//                     ],[
+//                         "Week 8",
+//                         20022
+//                     ],
+//                 ]
+//             }
+//         ]
+//     }
+// });
+
+// Highcharts.chart('container2', {
+//     chart: {
+//         type: 'line'
+//     },
+//     title: {
+//         text: 'Hero Up 2017-2018'
+//     },
+//     subtitle: {
+//         text: 'Weekly Funds'
+//     },
+//     xAxis: {
+//         categories: [
+//             'Week 1',
+//             'Week 2',
+//             'Week 3',
+//             'Week 4',
+//             'Week 5',
+//             'Week 6',
+//             'Week 7',
+//             'Week 8',
+//         ],
+//         crosshair: true
+//     },
+//     yAxis: {
+//         min: 0,
+//         title: {
+//             text: 'Amount Raised (in Rs)'
+//         }
+//     },
+//     tooltip: {
+//         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+//         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+//             '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+//         footerFormat: '</table>',
+//         shared: true,
+//         useHTML: true
+//     },
+//     plotOptions: {
+//         column: {
+//             pointPadding: 0.2,
+//             borderWidth: 0
+//         }
+//     },
+//     series: [{
+//         name: 'Bangalore',
+//         data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5]
+
+//     }, {
+//         name: 'Calicut',
+//         data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3],
+//         visible: false
+
+//     }, {
+//         name: 'Chennai',
+//         data: [48.9, 38.8, 39.3 ,48.3,, 41.4, 47.0, 59.0, 59.6],
+//         visible: false
+
+//     }, {
+//         name: 'Cochin',
+//         data: [42.4, 33.2,129.2, 144.0, 52.6, 75.5, 57.4, 60.4],
+//         visible: false
+
+//     }, {
+//         name: 'Coimbatore',
+//         data: [ 129.2, 144.0, 75.5,42.4, 33.2, 34.5, 57.4, 60.4],
+//         visible: false
+
+//     }, {
+//         name: 'Delhi',
+//         data: [ 22,42.4, 33.2, 39.7, 52.6, 75.5, 57.4, 60.4],
+//         visible: false
+
+//     }, {
+//         name: 'Hyderabad',
+//         data: [46.8, 51.14, 33.2, 34.5,129.2, 144.0, 75.5],
+//         visible: false
+
+//     }, {
+//         name: 'Mangalore',
+//         data: [ 47.6, 39.1, 46.8, 51.1,42.4, 33.2,129.2, 144.0,],
+//         visible: false
+
+//     }, {
+//         name: 'Mumbai',
+//         data: [ 75.5, 57.4, 60.4, 47.6,42.4, 33.2, 34.5, 39.7],
+//         visible: false
+
+//     }, {
+//         name: 'Mysore',
+//         data: [ 39.7,42.4, 33.2, 34.5, 52.6, 75.5, 57.4, 60.4],
+//         visible: false
+
+//     }, {
+//         name: 'Pune',
+//         data: [ 33.2, 34.5, 39.7, 52.6, 75.5, 135.6, 148.5, 47.6],
+//         visible: false
+
+//     }, {
+//         name: 'Tirupur',
+//         data: [ 135.6, 148.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1],
+//         visible: false
+
+//     }, {
+//         name: 'Vellore',
+//         data: [ 34.5, 39.7, 52.6,42.4, 33.2,135.6, 148.5, 60.4],
+//         visible: false
+
+//     }]
+// });
+
+// });
+</script>
+</body>
+</html>
